@@ -1,0 +1,20 @@
+<h1>Download</h1>
+<hr>
+<pre id="message">Loading...</pre>
+<a id="link" href=""><button disabled id="button">Download</button></a>
+<hr>
+<script>
+let name = encodeURIComponent(window.location.search.substr(1).replace('=', ''));
+let btn = document.querySelector("#button");
+btn.textContent += " " + name;
+let msg = document.querySelector("#message");
+fetch("/info/" + name)
+.then(res => res.json())
+.then(res => {
+    msg.textContent = JSON.stringify(res, null, 4)
+    if (res.status == "success") {
+        document.querySelector("#link").href = "/download/" + name;
+        btn.disabled = false;
+    }
+})
+</script>
