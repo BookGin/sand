@@ -2,10 +2,20 @@
 
 ![](https://github.com/bookgin/sand/actions/workflows/test.yml/badge.svg)
 
-Minimal self-hosted Firefox Send alternative **without** encrpytion.
+Minimal self-hosted Firefox Send alternative **without** encryption.
 
 - Go 1.15+
 - Redis 6.0+
+
+## Getting Started
+
+```
+docker-compose up
+
+# Access http://127.0.0.1:8080/upload
+```
+
+See `docker-compose.yml` for the configuration of environment variables. Also see `./redis.conf` for a example Redis configuration.
 
 ## Related works
 
